@@ -3,7 +3,9 @@ package com.org.hibernate.test;
 import java.util.List;
 
 import com.org.hibernate.dao.StudentDAO;
+import com.org.hibernate.dao.UserDao;
 import com.org.hibernate.pojo.Student;
+import com.org.hibernate.pojo.User;
  
 public class DbOperations {
  
@@ -11,9 +13,20 @@ public class DbOperations {
  
     public static void main(String[] args) {
         DbOperations dbOperations = new DbOperations();
+        User createStudent = dbOperations.createUser();
+ 
+       List<User> userList = dbOperations.getUserList();
+        if (userList != null) {
+            for (User user : userList) {
+                System.out.println("Student Name : " + user);
+            }
+        }
+        
+        /*
+         *  DbOperations dbOperations = new DbOperations();
         Student createStudent = dbOperations.createStudent();
  
-       /* List<Student> studentList = dbOperations.getStudentList();
+       List<Student> studentList = dbOperations.getStudentList();
         if (studentList != null) {
             for (Student student : studentList) {
                 System.out.println("Student Name : " + student.getName());
@@ -38,6 +51,25 @@ public class DbOperations {
         studentDAO.addStudent(s);
         return s;
     }
+    
+    public User createUser() {
+    	UserDao ud =new UserDao();
+    	User u =new User();
+    	u.setUserId("Pratik123");
+    	u.setFirstName("Pratik");
+    	u.setLastName("Sharma");
+    	u.setMobileNumber(new Integer(930892043));
+    	u.setGender('M');
+    	u.setPassword("Pass@123");
+    	ud.addUser(u);
+    	return u;
+    	
+    }
+    public List<User> getUserList() {
+    	UserDao ud =new UserDao();
+        return ud.listUser();
+    }
+ 
  
     public void updateStudent(Integer id) {
         Student student = studentDAO.findStudentById(id);

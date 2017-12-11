@@ -9,6 +9,7 @@
     <property name="hibernate.connection.password">pass@123</property>
     <property name="hibernate.hbm2ddl.auto">create</property>
     <!--Here we are mapping Pojo class not hbm-->
-     <mapping class="com.org.hibernate.pojo.Student" />
+    <!--  <mapping class="com.org.hibernate.pojo.Student" /> -->
+     <mapping class="com.org.hibernate.pojo.User" />
   </session-factory>
 </hibernate-configuration>
