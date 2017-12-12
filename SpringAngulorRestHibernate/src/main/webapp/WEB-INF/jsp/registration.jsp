@@ -13,39 +13,40 @@
 	<div style="width: 800px; margin: 0 auto;">
 		<h1>New User Registration</h1>
 		<div style="border-bottom-color: black; border: 2">
-			<f:form  action="saveregistration" method="POST">
+			<f:form action="saveregistration" method="POST">
 				<table>
 					<tr>
 						<td>User Id</td>
-						<td> <f:input path="userId" id="userId"/> </td>
+						<td><f:input path="userId" /></td>
 					</tr>
 					<tr>
 						<td>First Name</td>
-						<td> <f:input path="firstName"id="firstName"/></td>
+						<td><f:input path="firstName" /></td>
 					</tr>
 					<tr>
 						<td>Middle Name</td>
-						<td><input type="text" id="middleName"></td>
+						<td><f:input path="middleName" /></td>
 					</tr>
 					<tr>
 						<td>Last Name</td>
-						<td><f:input path="lastName" id="lastName"/></td>
+						<td><f:input path="lastName" /></td>
 					</tr>
 					<tr>
 						<td>Gender</td>
-						<td><f:radiobuttons id="Gender" path="Gender" items="${'Male':'M','Female':'F'}" />
-						<%-- <f:radiobuttons path= name="Gender" id="Gender"
-							checked="checked" value="M">Male <input type="radio"
-							name="Gender" id="Gender" value="F">Female</td> --%>
+						<td>
+						    <f:radiobutton path="sex" value="M" />Male 
+						    <f:radiobutton path="sex" value="F" />Female
+						</td>
+
 					</tr>
 					<tr>
 						<td>Password</td>
-						<td><f:input path="password" id="password"/></td>
+						<td><f:input path="password" /></td>
 					</tr>
 
 					<tr>
-						<td><f:button >Register Now</f:button></td>
-						<td><a href="#"><b>Terms & Conditions</b></a></td>
+						<td><input type="submit" value="Register Now" /></td>
+						<td><a href=""><b>Terms and Conditions</b></a></td>
 					</tr>
 				</table>
 			</f:form>
